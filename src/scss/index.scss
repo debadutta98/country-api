@@ -5,10 +5,15 @@
     padding: 0%;
     box-sizing: border-box;
 }
+html,body{
+    height: 100%;
+}
 body{
     font-family: Nunito Sans;
 }
 nav{
+    position: sticky;
+    top:0%;
 button{
     margin-left: auto;
     outline: none;
@@ -21,4 +26,37 @@ button{
         vertical-align: middle;
     }
 }
+}
+main{
+    form{
+        display: flex;
+        gap:1rem;
+        margin-top:1rem;
+        &,& *{
+        background-color: inherit;
+        color: inherit;
+        font-size: 14px;
+        font-family: inherit;
+        }
+        input{
+            &::placeholder{
+                background-image:url(../img/search-outline.svg);
+            }
+        }
+        div{
+            &::after{
+                content: url(../img/chevron-down-outline.svg);
+            }            
+            select{
+            cursor: pointer;
+            appearance: none;
+            height: 100%;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border:none;
+            outline: none;
+            padding-left:1.5rem;
+        }
+        }
+        
+    }
 }

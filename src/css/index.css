@@ -15,10 +15,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Nunito Sans;
 }
 
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+}
 nav button {
   margin-left: auto;
   outline: none;
@@ -30,4 +39,39 @@ nav button {
 nav button i {
   transform: rotate(-30deg);
   vertical-align: middle;
+}
+
+main form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+main form, main form * {
+  background-color: inherit;
+  color: inherit;
+  font-size: 14px;
+  font-family: inherit;
+}
+main form input::-moz-placeholder {
+  background-image: url(../img/search-outline.svg);
+}
+main form input:-ms-input-placeholder {
+  background-image: url(../img/search-outline.svg);
+}
+main form input::placeholder {
+  background-image: url(../img/search-outline.svg);
+}
+main form div::after {
+  content: url(../img/chevron-down-outline.svg);
+}
+main form div select {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
+  outline: none;
+  padding-left: 1.5rem;
 }/*# sourceMappingURL=index.css.map */
