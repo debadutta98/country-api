@@ -137,3 +137,67 @@ main{
         }
     }
 }
+
+.country-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+    margin-top: 2rem;
+    white-space: nowrap;
+    &__content{
+    ul{
+        list-style-type: none;
+        line-height: 2rem;
+    }
+    display: flex;
+    gap:7vw;
+    img{
+        width: 40vw;
+        height: 65vh;
+    }
+    &__details{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        gap:1.5rem;
+        margin: 2rem 0rem;
+        &__information{
+            display: flex;
+            gap:1rem;
+            width: 100%;
+            &__container-1{
+                margin-right:auto;
+            }
+            li{
+                 color:inherit;
+                b{
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+                span{
+                    padding-left: 5px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    }
+    .border-countries{
+        display: inline-flex;
+        flex-wrap: nowrap;
+        margin-top: 2rem;
+        &__title{
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        &__container{
+            display: flex;
+            flex-wrap: wrap;
+            gap:1rem;
+            margin-left: 1rem;
+        }
+    }
+}
