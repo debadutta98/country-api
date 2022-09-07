@@ -12,8 +12,12 @@ body{
     font-family: Nunito Sans;
 }
 nav{
+white-space: nowrap;
+flex-wrap: wrap;
+h3{
+    margin-right: auto;
+}
 button{
-    margin-left: auto;
     outline: none;
     border: none;
     background: inherit;
@@ -22,6 +26,14 @@ button{
     i{
         transform: rotate(-30deg);
         vertical-align: text-bottom;
+    }
+}
+@media screen and (max-width:304px) {
+    h3{
+        font-size: 5vw;
+    }
+    button{
+        font-size: 4vw;
     }
 }
 }
@@ -88,17 +100,6 @@ main{
         }
     }
     .grid{
-        display:grid;
-        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-        gap:3rem;
-        @media screen and (max-width:613px) {
-            grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
-            gap:2rem;
-        }
-        @media screen and (max-width:526px) {
-            grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
-            gap:1.5rem;
-        }
         .card{
             border-radius: 5px;
             display: flex;
@@ -107,13 +108,7 @@ main{
             img{
                 border-top-left-radius: 5px;
                 border-top-right-radius:5px;
-                height: 30vh;
-                @media screen and (max-width:938px) {
-                    height: 35vh;
-                }
-                @media screen and (max-width:486px) {
-                    height: 40vh;
-                }
+                height: 12rem;
             }
             h3{
                 padding:0rem 1rem;
@@ -144,17 +139,22 @@ main{
     flex-direction: column;
     gap:4rem;
     margin-top: 2rem;
-    white-space: nowrap;
     &__content{
     ul{
         list-style-type: none;
         line-height: 2rem;
     }
-    display: flex;
-    gap:7vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+     gap:3rem;
+    @media screen and (max-width:640px) {
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+             gap:2rem;
+    }
     img{
-        width: 40vw;
-        height: 65vh;
+        width: 100%;
+        max-width: 100%;
+        height:70vh;
     }
     &__details{
         width:100%;
@@ -172,6 +172,7 @@ main{
             li{
                  color:inherit;
                 b{
+                    white-space: nowrap;
                     font-size: 13px;
                     font-weight: bold;
                 }
@@ -185,10 +186,12 @@ main{
     }
     }
     .border-countries{
-        display: inline-flex;
-        flex-wrap: nowrap;
+        display: flex;
+        flex-wrap: wrap;
+        gap:1rem;
         margin-top: 2rem;
         &__title{
+            margin: auto 0rem;
             white-space: nowrap;
             font-size: 13px;
             font-weight: bold;
@@ -197,7 +200,37 @@ main{
             display: flex;
             flex-wrap: wrap;
             gap:1rem;
-            margin-left: 1rem;
         }
+    }
+}
+.loading{
+    width: 100%;
+    height: 100vh;
+    margin-top: 5rem;
+    display: flex;
+    span{
+    display: block;
+    font-size: larger;
+    margin-left: 50%;
+    animation-name: loading;
+    animation-timing-function:ease-in;
+    animation-duration: 1s;
+    animation-delay: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction:alternate-reverse;
+    width: 4.3rem;
+    overflow: hidden;
+}
+}
+
+@keyframes loading {
+    10%{
+        width: 4.7rem;
+    }
+    50%{
+        width: 5rem;
+    }
+    100%{
+        width:6rem;
     }
 }

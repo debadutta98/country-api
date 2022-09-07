@@ -49,10 +49,10 @@ const CountryInDetails = ({ mode }) => {
     const goBack = () => {
         navigate(-1);
     };
-    return <Main mode={mode} style={{ height: "max-content" }}>
+    return <Main mode={mode}>
         <div className="country-details">
             <BackButton mode={mode} onClick={goBack}><i className="fa-solid fa-arrow-left-long"></i> Back</BackButton>
-            {Object.keys(countryResult).length > 0 && <div className="country-details__content">
+            {Object.keys(countryResult).length > 0 ? <div className="country-details__content">
                 <img src={countryResult.flag} alt={countryResult.name} />
                 <div className="country-details__content__details">
                     <h2>{countryResult.name}</h2>
@@ -77,7 +77,7 @@ const CountryInDetails = ({ mode }) => {
                         </ul>
                     </div>}
                 </div>
-            </div>}
+            </div> : <div className="loading"><span>Loading...</span></div>}
         </div>
     </Main>
 };

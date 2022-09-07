@@ -38,6 +38,24 @@ export const Filter = styled.div`
         }
 `;
 export const Grid = styled.div`
+display:grid;
+grid-template-columns: repeat(${props=>{
+    if(props.length<4)
+    {
+        return "4";
+    }else{
+        return "auto-fit";
+    }
+}},minmax(250px,1fr));
+gap:3rem;
+@media screen and (max-width:613px) {
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:2rem;
+}
+@media screen and (max-width:530px) {
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap:1.5rem;
+}
 margin-top:3rem;
 `;
 export const BackButton=styled.button`
