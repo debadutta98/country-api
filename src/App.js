@@ -20,8 +20,8 @@ function App() {
   return <>
     <NavBar mode={mode} onChangeMode={onChangeMode} />
     <Routes>
-      <Route path="/country-api" element={<MainContent mode={mode} />} />
-      <Route path="/details/:countryname" element={<CountryInDetails mode={mode} />} />
+      <Route path="/country-api" element={<MainContent mode={mode} />}/>
+      <Route path="/country-api/details/:countryname" element={<CountryInDetails mode={mode} />} />
     </Routes>
   </>;
 }
