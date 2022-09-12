@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import {useNavigate, useParams } from "react-router-dom";
+import { context } from "../context/Provider";
 import { BackButton, Main, Tag } from "./StyledComponets";
 
-const CountryInDetails = ({ mode }) => {
+const CountryInDetails = () => {
+    const ctx=useContext(context);
     const [countryResult, setCountryResult] = useState({});
     const [borderCountries,setBorderCountries]=useState([]);
     const param = useParams();
@@ -49,9 +51,9 @@ const CountryInDetails = ({ mode }) => {
     const goBack = () => {
         navigate(-1);
     };
-    return <Main mode={mode}>
+    return <Main isDark={ctx.isDark}>
         <div className="country-details">
-            <BackButton mode={mode} onClick={goBack}><i className="fa-solid fa-arrow-left-long"></i> Back</BackButton>
+            <BackButton isDark={ctx.isDark} onClick={goBack}><i className="fa-solid fa-arrow-left-long"></i> Back</BackButton>
             {Object.keys(countryResult).length > 0 ? <div className="country-details__content">
                 <img src={countryResult.flag} alt={countryResult.name} />
                 <div className="country-details__content__details">
@@ -72,7 +74,9 @@ const CountryInDetails = ({ mode }) => {
                         <span className="border-countries__title">Border Countries:</span>
                         <ul className="border-countries__container">
                         {borderCountries.map(((value, index) => {
-                            return <Tag key={index} mode={mode}>{value}</Tag>
+                            return <a key={index} href={`/country-api/details/${value}`} style={{ textDecoration: "none", color: "inherit" }}>
+                                <Tag isDark={ctx.isDark}>{value}</Tag>
+                            </a>
                         }))}
                         </ul>
                     </div>}

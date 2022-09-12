@@ -4,22 +4,22 @@ export const Main = styled.main`
     z-index: 1;
     width:100%;
     height:100%;
-    color: ${props => props.mode ? "hsl(0, 0%, 98%)" : "hsl(200, 15%, 8%)"};
-    background-color: ${props => props.mode ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)"};
+    color: ${props => props.isDark ? "hsl(0, 0%, 98%)" : "hsl(200, 15%, 8%)"};
+    background-color: ${props => props.isDark ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)"};
     padding:1rem 4vw;
 `;
 export const Input = styled.input`
-        width:50vw;
-        padding:0.8rem;
+        width:20rem;
+        padding:1rem;
         border:none;
         outline: none;
-        box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+        box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
         border-radius: 4px;
         &::placeholder{
             padding-left: 2rem;
             background-repeat: no-repeat;
             background-size:19px;
-            filter:${props => props.mode ? "brightness(0) invert(1)" : "invert(56%) sepia(3%) saturate(14%) hue-rotate(339deg) brightness(93%) contrast(87%)"};
+            filter:${props => props.isDark ? "brightness(0) invert(1)" : "invert(56%) sepia(3%) saturate(14%) hue-rotate(339deg) brightness(93%) contrast(87%)"};
         }
 `;
 export const Filter = styled.div`
@@ -27,14 +27,14 @@ export const Filter = styled.div`
         align-items: center;
         margin-left: auto;
         position: relative;
-        box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+        box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
         &::after{
             display: block;
             width: 15px;
             height: 15px;
             position: absolute;
             left:86%;
-            filter:${props => props.mode ? "brightness(0) invert(1)" : "invert(56%) sepia(3%) saturate(14%) hue-rotate(339deg) brightness(93%) contrast(87%)"};
+            filter:${props => props.isDark ? "brightness(0) invert(1)" : "invert(56%) sepia(3%) saturate(14%) hue-rotate(339deg) brightness(93%) contrast(87%)"};
         }
 `;
 export const Grid = styled.div`
@@ -66,12 +66,12 @@ export const BackButton=styled.button`
         padding:0.5rem 1.8rem;
         cursor:pointer;
         background-color:inherit;
-        box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+        box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
         word-spacing: 0.3rem;
 `;
 
 export const Tag=styled.li`
- box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+ box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
  color:inherit;
  background-color:inherit;
  padding:0rem 1.5rem;
@@ -80,7 +80,7 @@ export const Tag=styled.li`
 `;
 
 export const Card = styled.div`
-box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
 `;
 export const Nav = styled.nav`
     position: sticky;
@@ -90,10 +90,13 @@ export const Nav = styled.nav`
     align-items: center;
     padding:1rem 4vw;
     gap:1rem;
-    box-shadow: ${props => props.mode ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
-    color: ${props => props.mode ? "hsl(0, 0%, 98%)" : "hsl(200, 15%, 8%)"};
-    background-color: ${props => props.mode ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)"};
+    box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
+    color: ${props => props.isDark ? "hsl(0, 0%, 98%)" : "hsl(200, 15%, 8%)"};
+    background-color: ${props => props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)"};
     span{
-        margin-left: ${props => props.mode ? "9px" : "7px"};
+        margin-left: ${props => props.isDark ? "9px" : "7px"};
     }
+`;
+export const DropDownOverlay = styled.div`
+box-shadow: ${props => props.isDark ? "hsl(200, 15%, 8%) 0px 1px 4px;" : "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"};
 `;

@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { context } from "../context/Provider";
 import { Card } from "./StyledComponets";
 
 
-const GridCard = ({ result,mode }) => {
+const GridCard = ({ result }) => {
+    const ctx=useContext(context);
     return <>
     <Link to={`details/${result.name}`} style={{textDecoration:"none",color:"inherit"}}>
-        <Card className="card" mode={mode}>
+        <Card className="card" isDark={ctx.isDark}>
             <img src={result.flag} alt={result.name} />
             <h3>{result.name}</h3>
             <div className="card__small-details">
