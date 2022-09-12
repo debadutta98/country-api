@@ -147,6 +147,10 @@ main{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
      gap:3rem;
+    @media screen and (max-width:400px) {
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        gap:2rem;
+    }
     img{
         width: 100%;
         max-width: 100%;
