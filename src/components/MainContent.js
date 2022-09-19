@@ -46,7 +46,7 @@ const MainContent = () => {
         }
     }, [searchValue]);
     const onChangeFilter = (continentName) => {
-        filterref.current.value = continentName;
+        filterref.current.value = continentName === "Americas" ? "America" : continentName;
         setFilter(continentName);
     };
     const onToggleHandler = () => {
