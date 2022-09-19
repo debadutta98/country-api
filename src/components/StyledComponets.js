@@ -77,6 +77,7 @@ export const Tag=styled.li`
  padding:0rem 1.5rem;
  font-size: 12px;
  font-weight: 500;
+ cursor:pointer;
 `;
 
 export const Card = styled.div`

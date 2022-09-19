@@ -167,14 +167,14 @@ main .grid .card__small-details span b {
 }
 .country-details__content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 3rem;
 }
 .country-details__content ul {
   list-style-type: none;
   line-height: 2rem;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 319.5px) {
   .country-details__content {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
@@ -183,7 +183,7 @@ main .grid .card__small-details span b {
 .country-details__content img {
   width: 100%;
   max-width: 100%;
-  height: 24em;
+  height: auto;
 }
 .country-details__content__details {
   width: 100%;
@@ -235,9 +235,6 @@ main .grid .card__small-details span b {
   .country-details {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-  }
-  .country-details img {
-    height: auto;
   }
 }
 
